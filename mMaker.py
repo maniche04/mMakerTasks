@@ -7,7 +7,7 @@ from time import strftime
 import pytz
 import dateutil
 from newspaper import Article
-import MarketFeeds
+import NewsFeeds
 from DBConnection import getConnection
 local_tz = pytz.timezone('Asia/Dubai')
 
@@ -15,12 +15,12 @@ conn = getConnection()
 c = conn.cursor()
 
 def fetchBBC():
-    fetchArticles(MarketFeeds.BBCBusiness(),'1','BBC Business')
+    fetchArticles(NewsFeeds.BBCBusiness(),'1','BBC Business')
 
 def fetchReuters():
-    fetchArticles(MarketFeeds.ReutersBusiness(),'2','Reuters Business')
-    fetchArticles(MarketFeeds.ReutersCompany(),'2','Reuters Company')
-    fetchArticles(MarketFeeds.ReutersHotStock(),'2','Reuters Hot Stock')
+    fetchArticles(NewsFeeds.ReutersBusiness(),'2','Reuters Business')
+    fetchArticles(NewsFeeds.ReutersCompany(),'2','Reuters Company')
+    fetchArticles(NewsFeeds.ReutersHotStock(),'2','Reuters Hot Stock')
     
 ## Reads the News from the Sources
 ##################################

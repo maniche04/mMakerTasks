@@ -12,11 +12,20 @@ from xml.etree import ElementTree as etree
 #############################
 def BBCBusiness():
     feed = urllib2.urlopen('http://feeds.bbci.co.uk/news/business/rss.xml')
-    return parseRSS(feed)    
+    return parseRSS(feed)
 
+# RSS Feeds from WALL STREET JOURNAL
+####################################
+def WSJMarkets():
+    feed = urllib2.urlopen('http://www.wsj.com/xml/rss/3_7031.xml')
+    return parseRSS(feed)
+
+def WSJUSBusiness():
+    feed = urllib2.urlopen('http://www.wsj.com/xml/rss/3_7014.xml')
+    return parseRSS(feed)          
 
 # RSS Feeds from THOMPSON REUTERS
-################################### 
+################################# 
 def ReutersBusiness():
     feed = urllib2.urlopen('http://feeds.reuters.com/reuters/businessNews')
     return parseRSS(feed)
@@ -27,10 +36,16 @@ def ReutersCompany():
 
 def ReutersHotStock():
     feed = urllib2.urlopen('http://feeds.reuters.com/reuters/hotStocksNews')
-    return parseRSS(feed) 
+    return parseRSS(feed)
+
+# RSS Feeds from CNN
+####################
+def CNNBusiness():
+    feed = urllib2.urlopen('http://rss.cnn.com/rss/money_news_international.rss')
+    return parseRSS(feed)
 
 # RSS Feed Parser
-################################### 
+#################
 def parseRSS(feed):
     feed_data = feed.read()
     feed.close()

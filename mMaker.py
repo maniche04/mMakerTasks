@@ -22,6 +22,13 @@ def fetchReuters():
     fetchArticles(NewsFeeds.ReutersCompany(),'2','Reuters Company')
     fetchArticles(NewsFeeds.ReutersHotStock(),'2','Reuters Hot Stock')
     
+def fetchWSJ():
+    fetchArticles(NewsFeeds.WSJMarkets(),'3','WSJ Markets')
+    fetchArticles(NewsFeeds.WSJUSBusiness(),'3','WSJ US Business')
+
+def fetchCNN():
+    fetchArticles(NewsFeeds.CNNBusiness(),'4','CNN Business')
+    
 ## Reads the News from the Sources
 ##################################
 def fetchArticles(feeds,source,name):
